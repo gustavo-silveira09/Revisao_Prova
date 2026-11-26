@@ -1,0 +1,197 @@
+/* Variáveis da Paleta Oficial WEG */
+:root {
+    --weg-azul-principal: #00579D;
+    --weg-azul-escuro: #003366;
+    --weg-azul-claro: #E6F0F8;
+    --weg-azul-destaque: #0072CE;
+    --cinza-fundo: #F4F6F9;
+    --cinza-borda: #D9E0E6;
+    --texto-principal: #1E293B;
+    --texto-secundario: #475569;
+    --branco: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--cinza-fundo);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background: linear-gradient(135deg, var(--weg-azul-escuro) 0%, var(--weg-azul-principal) 100%);
+    color: var(--branco);
+    padding: 48px 0;
+    border-bottom: 5px solid var(--weg-azul-destaque);
+    margin-bottom: 32px;
+}
+
+.tag-institucional {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+
+.cabecalho h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.05rem;
+    color: #DCE8F2;
+    max-width: 750px;
+}
+
+/* Cartões de Conteúdo */
+.card {
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 51, 102, 0.05);
+}
+
+.destaque-weg {
+    border-left: 6px solid var(--weg-azul-principal);
+}
+
+.card h2 {
+    color: var(--weg-azul-escuro);
+    font-size: 1.45rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--weg-azul-claro);
+}
+
+.card p {
+    margin-bottom: 14px;
+    color: var(--texto-secundario);
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Grid de Conceitos */
+.grid-conceitos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.box-conceito {
+    background-color: var(--cinza-fundo);
+    border: 1px solid var(--cinza-borda);
+    border-top: 3px solid var(--weg-azul-principal);
+    border-radius: 6px;
+    padding: 18px;
+}
+
+.box-conceito h3 {
+    color: var(--weg-azul-principal);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.box-conceito p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Tabela */
+.tabela-responsiva {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: var(--weg-azul-principal);
+    color: var(--branco);
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--cinza-borda);
+    font-size: 0.95rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F8FAFC;
+}
+
+tbody tr:hover {
+    background-color: var(--weg-azul-claro);
+}
+
+/* Código Inline e Bloco */
+code {
+    background-color: var(--weg-azul-claro);
+    color: var(--weg-azul-escuro);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+pre {
+    background-color: #0F172A;
+    color: #E2E8F0;
+    padding: 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 14px;
+    border-left: 4px solid var(--weg-azul-destaque);
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--weg-azul-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 40px;
+    font-size: 0.95rem;
+}
+
+.detalhe-rodape {
+    color: #A3C1DC;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}

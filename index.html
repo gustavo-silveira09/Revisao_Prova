@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro de Motores | Projeto CentroWEG - SENAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container">
+            <span class="tag-institucional">SENAI • CentroWEG • Jaraguá do Sul - SC</span>
+            <h1>Sistema de Cadastro de Motores em Python</h1>
+            <p class="subtitulo">
+                Documentação técnica do algoritmo monolítico desenvolvido para gerenciamento de motores elétricos em memória.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Seção de Contexto Institucional -->
+        <section class="card destaque-weg">
+            <h2>Sobre o Projeto e Local de Desenvolvimento</h2>
+            <p>
+                Este software foi desenvolvido durante as atividades práticas de programação realizadas no 
+                <strong>SENAI</strong>, dentro da unidade de ensino técnico localizada nas dependências da 
+                <strong>WEG (CentroWEG)</strong>, em <strong>Jaraguá do Sul, Santa Catarina</strong>.
+            </p>
+            <p>
+                Inspirado no portfólio industrial de motores elétricos da própria WEG, o sistema simula um 
+                cadastro rápido de especificações técnicas (código, modelo, potência, rotação em RPM e tensão) 
+                utilizando apenas estruturas nativas da linguagem Python, sem dependência de banco de dados externo.
+            </p>
+        </section>
+
+        <!-- Seção de Explicação da Arquitetura -->
+        <section class="card">
+            <h2>Arquitetura e Funcionamento do Código</h2>
+            <p>
+                O programa foi estruturado de forma <strong>monolítica</strong> (todo contido em um único arquivo <code>.py</code>) 
+                para facilitar testes locais e compreensão da lógica procedural.
+            </p>
+
+            <div class="grid-conceitos">
+                <div class="box-conceito">
+                    <h3>1. Armazenamento em Array (Lista)</h3>
+                    <p>
+                        A variável global <code>motores = []</code> atua como um vetor dinâmico em memória RAM. 
+                        Cada motor cadastrado é armazenado como um dicionário contendo suas chaves e valores técnicos.
+                    </p>
+                </div>
+
+                <div class="box-conceito">
+                    <h3>2. Modularização por Funções</h3>
+                    <p>
+                        Cada operação do sistema foi isolada em uma função específica, aplicando o padrão 
+                        <strong>CRUD</strong> (Create, Read, Update, Delete) e facilitando a leitura do código.
+                    </p>
+                </div>
+
+                <div class="box-conceito">
+                    <h3>3. Validação e Integridade</h3>
+                    <p>
+                        Antes de inserir um novo item, o algoritmo percorre o array para impedir códigos duplicados. 
+                        Na edição, o usuário pode pressionar <code>ENTER</code> para preservar dados existentes.
+                    </p>
+                </div>
+
+                <div class="box-conceito">
+                    <h3>4. Loop de Execução</h3>
+                    <p>
+                        A função <code>menu()</code> utiliza um laço <code>while True</code> que mantém o terminal 
+                        interativo ativo até que a opção de saída seja acionada.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de Funções -->
+        <section class="card">
+            <h2>Mapeamento das Funções do Sistema</h2>
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Função</th>
+                            <th>Operação CRUD</th>
+                            <th>Descrição Técnica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>cadastrar_motor()</code></td>
+                            <td>Create (Criar)</td>
+                            <td>Coleta os dados do motor, valida se o código já existe e adiciona o dicionário à lista.</td>
+                        </tr>
+                        <tr>
+                            <td><code>listar_motores()</code></td>
+                            <td>Read (Ler)</td>
+                            <td>Percorre o array com <code>enumerate()</code> e exibe todos os motores formatados no console.</td>
+                        </tr>
+                        <tr>
+                            <td><code>buscar_motor()</code></td>
+                            <td>Read (Filtrar)</td>
+                            <td>Realiza busca parcial (case-insensitive) por código ou modelo utilizando List Comprehension.</td>
+                        </tr>
+                        <tr>
+                            <td><code>editar_motor()</code></td>
+                            <td>Update (Atualizar)</td>
+                            <td>Localiza o motor pelo código e atualiza apenas os campos preenchidos pelo usuário.</td>
+                        </tr>
+                        <tr>
+                            <td><code>remover_motor()</code></td>
+                            <td>Delete (Excluir)</td>
+                            <td>Encontra o índice do registro no array e remove o item através do método <code>.pop()</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>menu()</code></td>
+                            <td>Controle</td>
+                            <td>Gerencia a interface de linha de comando (CLI) e direciona o fluxo para cada função.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exemplo Visual do Código -->
+        <section class="card">
+            <h2>Trecho Principal da Estrutura de Dados</h2>
+            <p>Abaixo está a representação de como cada motor é estruturado dentro do array em Python:</p>
+            <pre><code>motores = []
+
+motor = {
+    "codigo": "W22-001",
+    "modelo": "WEG W22 IR3 Premium",
+    "potencia": "10 CV",
+    "rotacao": "1750",
+    "tensao": "220V/380V"
+}
+
+motores.append(motor)</code></pre>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>Desenvolvido no <strong>SENAI / CentroWEG</strong> — Jaraguá do Sul, SC</p>
+            <p class="detalhe-rodape">Projeto acadêmico em Python • Paleta inspirada na identidade visual WEG</p>
+        </div>
+    </footer>
+
+</body>
+</html>
